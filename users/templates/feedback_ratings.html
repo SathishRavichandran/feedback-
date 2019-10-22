@@ -1,0 +1,22 @@
+{% include 'sidebar_template.html' %}
+<center>
+<h2>Customer Rating</h2>
+
+
+ <div>
+     {% for data in feedback %}
+        <h3>{{data.text}}</h3>
+
+         {% for checked_rating in data.feedback_ratings %}
+             <span class="fa fa-star checked"></span>
+          {% endfor %}
+         {% for unchecked_rating in data.pending_ratings %}
+              <span class="fa fa-star"></span>
+          {% endfor %}
+
+
+
+     {% endfor %}
+ </div>
+
+</center>
